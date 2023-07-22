@@ -17,8 +17,8 @@ public class CommentService {
         this.commentRepository = commentRepository;
     }
 
-    public void boardCreate(Comment comment){
-        commentRepository.save(comment);
+    public void boardCreate(Comment comment, Long boardId){
+        commentRepository.save(comment, boardId);
     }
 
     public void boardUpdate(Long boardId, Comment comment){

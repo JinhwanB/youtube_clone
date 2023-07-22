@@ -1,21 +1,24 @@
-package com.example.youtubeClone.repository.comment;
+package com.example.youtubeClone.repository.Reply;
 
 import com.example.youtubeClone.dto.Board;
 import com.example.youtubeClone.dto.Comment;
+import com.example.youtubeClone.dto.Reply;
+import com.example.youtubeClone.repository.comment.MemoryCommentRepository;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
-class MemoryCommentRepositoryTest {
-
+public class ReplyTest {
     MemoryCommentRepository memoryCommentRepository = new MemoryCommentRepository();
+    MemoryReplyRepository memoryReplyRepository = new MemoryReplyRepository(memoryCommentRepository);
 
     @AfterEach
     public void afterEach(){
         memoryCommentRepository.clear();
+        memoryReplyRepository.clear();
     }
 
     @Test
@@ -25,11 +28,26 @@ class MemoryCommentRepositoryTest {
         comment.setCommentContent("안녕하세요");
         Board board = new Board();
         board.setId(123L);
-;
         memoryCommentRepository.save(comment, board.getId());
 
+        Reply reply = new Reply();
+        reply.setContent("안녕");
+        memoryReplyRepository.save(comment.getCommentId(), reply);
+        Reply reply2 = new Reply();
+        reply2.setContent("안녕하세여");
+        memoryReplyRepository.save(comment.getCommentId(), reply2);
+
+        Reply reply3 = new Reply();
+        reply3.setContent("반가워요");
+        memoryReplyRepository.save(comment.getCommentId(), reply3);
+
         Comment result = memoryCommentRepository.findById(comment.getCommentId());
+        List<Reply> replyList = result.getReply();
         assertThat(comment).isEqualTo(result);
+        System.out.println("comment ID : "+ result.getCommentId());
+        for(Reply reply1 : replyList) {
+            System.out.println(reply1.toString());
+        }
     }
 
     @Test

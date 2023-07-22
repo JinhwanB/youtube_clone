@@ -22,10 +22,6 @@
 <img src="https://img.shields.io/badge/java 17-007396?style=for-the-badge&logo=java&logoColor=white"> <img src="https://img.shields.io/badge/spring 3.1.0-6DB33F?style=for-the-badge&logo=spring&logoColor=white"> <img src="https://img.shields.io/badge/thymeleaf-005F0F?style=for-the-badge&logo=thymeleaf&logoColor=white">
 
 
-### APP
-<img src="https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=Dart&logoColor=white"> <img src="https://img.shields.io/badge/flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white">
-
-
 ### DB
 <img src="https://img.shields.io/badge/firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black">
 
@@ -62,5 +58,9 @@
 
 ## 👩🏻‍💻👨🏻‍💻 작업 기록
 
-- `2023.06.24` 환경 세팅: firebase 연동 확인, 로그인 기능 구현
+- `2023.07.22` - 김경규 : 대댓글 기능 구현중입니다.
 <br />
+
+
+## 주의 사항
+- 절대로 API키를 깃허브에 커밋하지 마세요.! 도용시 문제가 발생할 수 있습니다.

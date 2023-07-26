@@ -22,10 +22,6 @@
 <img src="https://img.shields.io/badge/java 17-007396?style=for-the-badge&logo=java&logoColor=white"> <img src="https://img.shields.io/badge/spring 3.1.0-6DB33F?style=for-the-badge&logo=spring&logoColor=white"> <img src="https://img.shields.io/badge/thymeleaf-005F0F?style=for-the-badge&logo=thymeleaf&logoColor=white">
 
 
-### DB
-<img src="https://img.shields.io/badge/firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black">
-
-
 ### Collaboration
 <img src="https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=Notion&logoColor=white"> <img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=Discord&logoColor=white"> <img src="https://img.shields.io/badge/Slack-4A154B?style=for-the-badge&logo=Slack&logoColor=white"> <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
 
@@ -58,7 +54,9 @@
 
 ## 👩🏻‍💻👨🏻‍💻 작업 기록
 
+- `2023.07.20` - 배진환 : 댓글 기능 구현중입니다.
 - `2023.07.22` - 김경규 : 대댓글 기능 구현중입니다.
+- `2023.07.26` - 배진환 : 댓글 및 동영상 불러오기 기능 구현 (추후 수정 필요)
 <br />
 
 

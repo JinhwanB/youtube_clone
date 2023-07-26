@@ -1,6 +1,6 @@
 ## 🔍 프로젝트 개요
 - **개발 목적:** CRUD 실습, 소프트 스킬 향상을 위한 협업 경험 쌓기
-- **개발 기간:** 
+- **개발 기간:** `2023.07.24` ~ `2023.07.30`
 - **최종 배포:** 
 
 <br />
@@ -8,6 +8,12 @@
 ## 😎 조원 소개
 
 | 김경규 | 최자현 | 배진환 | 김재민 | 유지완 |
+| :-: | :-: | :-: | :-: | :-: |
+| ![@WhiteKIM](https://github.com/Goorm-helpme/youtube_clone/assets/123534245/3409dab9-dc57-484f-85d7-8952b7810ce8) | ![@JahyunChoi](https://github.com/Goorm-helpme/youtube_clone/assets/123534245/4630fd54-7f7f-4acb-b411-ea5903663d88) | ![@JinhwanB](https://github.com/Goorm-helpme/youtube_clone/assets/123534245/ed9ba483-336b-4161-9e89-d57a3198e46d) | ![@K-Jae-min](https://github.com/Goorm-helpme/youtube_clone/assets/123534245/cae394c4-5cfd-4cb9-906e-0b983b09e61b) | ![@PerfectlyElastic](https://github.com/Goorm-helpme/youtube_clone/assets/123534245/d47107f9-e584-4fc3-8518-b14c42c34cbf) |
+| [@WhiteKIM](https://github.com/WhiteKIM) | [@JahyunChoi](https://github.com/JahyunChoi) | [@JinhwanB](https://github.com/JinhwanB) | [@K-Jae-min](https://github.com/K-Jae-min) | [@PerfectlyElastic](https://github.com/PerfectlyElastic) |
+| 조원 | 조원 | 조장 | 조원 | 조원 |
+| 백엔드 개발자 | 풀스택 개발자 | 백엔드 개발자 | 풀스택 개발자 | 백엔드 개발자 |
+| 대댓글 구현 | 메인 페이지 구현 | 댓글 구현 | 동영상 플레이 페이지 구현 | 좋아요 기능 구현 |
 
 <br />
 
@@ -33,10 +39,10 @@
 <br />
 
 ## ✨ 주요 기능
-- **조원 정보 CRUD:** 관리자 로그인 시 `생성, 수정, 삭제` 가능, 누구나 `읽기` 가능
-- **조원 피드백 CRUD:** 관리자 로그인 시 `생성, 수정, 삭제` 가능, 누구나 `읽기` 가능
-- **방명록 CRUD:** 누구나 `생성, 읽기, 수정, 삭제` 가능, `수정, 삭제` 할 때 생성시 입력한 비밀번호 작성 필요
-- **관리자 로그인:** 미리 DB에 생성한 계정 1개 공유, 조원 정보/피드백 `생성, 수정, 삭제` 용도
+- **댓글 CRUD:** 누구나 `생성, 수정, 삭제` 가능, 누구나 `읽기` 가능
+- **대댓글 CRUD:** 누구나 `생성, 수정, 삭제` 가능, 누구나 `읽기` 가능
+- **동영상 R:** 유튜브 api를 활용한 영상 데이터 가져오기
+- **좋아요:** `좋아요` 버튼 클릭시 해당 영상에 대한 좋아요 클릭 갯수 표시
 
 <br />
 

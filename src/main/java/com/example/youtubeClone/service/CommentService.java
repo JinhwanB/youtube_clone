@@ -2,38 +2,34 @@ package com.example.youtubeClone.service;
 
 import com.example.youtubeClone.dto.Comment;
 import com.example.youtubeClone.repository.comment.CommentRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class CommentService {
 
-    @Autowired
     private final CommentRepository commentRepository;
 
-    public CommentService(CommentRepository commentRepository) {
-        this.commentRepository = commentRepository;
+    public void commentCreate(Comment comment, String videoId){
+        commentRepository.save(comment, videoId);
     }
 
-    public void boardCreate(Comment comment, Long boardId){
-        commentRepository.save(comment, boardId);
+    public void commentUpdate(Long commentId, Comment comment){
+        commentRepository.update(commentId, comment);
     }
 
-    public void boardUpdate(Long boardId, Comment comment){
-        commentRepository.update(boardId, comment);
+    public void commentDelete(Long commentId){
+        commentRepository.delete(commentId);
     }
 
-    public void boardDelete(Long boardId){
-        commentRepository.delete(boardId);
+    public Comment findCommentOne(Long commentId){
+        return commentRepository.findById(commentId);
     }
 
-    public Comment findBoardOne(Long boardId){
-        return commentRepository.findById(boardId);
-    }
-
-    public List<Comment> findBoardAll(){
-        return commentRepository.findAll();
+    public List<Comment> findCommentAll(String videoId){
+        return commentRepository.findAll(videoId);
     }
 }

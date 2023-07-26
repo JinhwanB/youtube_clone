@@ -1,17 +1,16 @@
 package com.example.youtubeClone.repository.comment;
 
-import com.example.youtubeClone.dto.Board;
 import com.example.youtubeClone.dto.Comment;
 
 import java.util.List;
 
 public interface CommentRepository {
 
-    void save(Comment comment, Long boardId);
+    void save(Comment comment, String videoId);
 
     void update(Long commentId, Comment comment);
     void delete(Long commentId);
     Comment findById(Long commentId);
-    List<Comment> findAll();
+    List<Comment> findAll(String videoId);
 
 }

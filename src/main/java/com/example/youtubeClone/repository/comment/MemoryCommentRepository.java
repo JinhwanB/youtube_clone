@@ -1,7 +1,6 @@
 package com.example.youtubeClone.repository.comment;
 
 import com.example.youtubeClone.dto.Comment;
-import com.example.youtubeClone.dto.Reply;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -15,9 +14,10 @@ public class MemoryCommentRepository implements CommentRepository {
     private static Map<Long, Comment> commentData = new HashMap<>();
 
     @Override
-    public void save(Comment comment, Long boardId) {
+    public void save(Comment comment, String videoId) {
         comment.setCommentId(++sequence);
-        comment.setBoardId(boardId);
+        comment.setBoardId(sequence);
+        comment.setVideoId(videoId);
         commentData.put(comment.getCommentId(), comment);
     }
 
@@ -39,8 +39,13 @@ public class MemoryCommentRepository implements CommentRepository {
     }
 
     @Override
-    public List<Comment> findAll() {
-        return new ArrayList<>(commentData.values());
+    public List<Comment> findAll(String videoId) {
+        List<Comment> commentList = new ArrayList<>();
+        for(Map.Entry<Long, Comment> entry : commentData.entrySet()){
+            Comment value = entry.getValue();
+            if(value.getVideoId().equals(videoId)) commentList.add(value);
+        }
+        return commentList;
     }
 
 

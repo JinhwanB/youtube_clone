@@ -15,7 +15,7 @@ public class MemoryVideoRepository implements VideoRepository{
     private static List<Video> videoData = new ArrayList<>();
 
     @Override
-    public Video getVideo(String videoId) throws GeneralSecurityException, IOException {
+    public Video getVideo(String videoId) throws GeneralSecurityException, IOException { // 영상 하나의 데이터 가져오기
         List<Video> popularVideos = getPopularVideos();
         Video result = null;
         for(Video video : popularVideos){
@@ -27,7 +27,7 @@ public class MemoryVideoRepository implements VideoRepository{
     }
 
     @Override
-    public List<Video> getPopularVideosListExceptCurrentVideo(String videoId) throws IOException, GeneralSecurityException {
+    public List<Video> getPopularVideosListExceptCurrentVideo(String videoId) throws IOException, GeneralSecurityException { // 현재 재생되는 영상 제외한 나머지 영상 리스트
         YoutubeApi apiClient = new YoutubeApi();
         List<Video> popularVideos = apiClient.getPopularVideos();
         popularVideos.removeIf(video -> video.getVideoId().equals(videoId));
@@ -35,7 +35,7 @@ public class MemoryVideoRepository implements VideoRepository{
     }
 
     @Override
-    public List<Video> getPopularVideos() throws GeneralSecurityException, IOException {
+    public List<Video> getPopularVideos() throws GeneralSecurityException, IOException { // 유튜브 인기 동영상 10개 리스트
         YoutubeApi apiClient = new YoutubeApi();
         if(videoData.isEmpty()){
             List<Video> popularVideos = apiClient.getPopularVideos();

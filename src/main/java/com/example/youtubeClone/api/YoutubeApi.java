@@ -29,7 +29,7 @@ public class YoutubeApi {
                 .build();
     }
 
-    public List<Video> getPopularVideos() throws IOException {
+    public List<Video> getPopularVideos() throws IOException { // 유튜브 인기 동영상 10개 가져오기
         YouTube.Search.List search = youtube.search().list("id,snippet");
         search.setKey(API_KEY);
         search.setType("video");

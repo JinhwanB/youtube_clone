@@ -19,13 +19,13 @@ import java.util.List;
 @Controller
 @Slf4j
 @RequiredArgsConstructor
-@RequestMapping("/video")
+@RequestMapping("/video") // "localhost:8080/video"로 들어오는 요청 처리
 public class VideoController {
 
     private final VideoService videoService;
     private final CommentService commentService;
 
-    @GetMapping("/")
+    @GetMapping("/") // 영상 재생되는 페이지
     public String videoHome(@RequestParam String id, Model model) throws GeneralSecurityException, IOException {
         List<Video> videoListExceptCurrentVideo = videoService.findVideoListExceptCurrentVideo(id);
         Video video = videoService.findVideo(id);

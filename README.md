@@ -9,7 +9,7 @@
 
 | 김경규 | 최자현 | 배진환 | 김재민 | 유지완 |
 | :-: | :-: | :-: | :-: | :-: |
-| ![@WhiteKIM](https://github.com/Goorm-helpme/youtube_clone/assets/123534245/3409dab9-dc57-484f-85d7-8952b7810ce8) | ![@JahyunChoi](https://github.com/Goorm-helpme/youtube_clone/assets/123534245/4630fd54-7f7f-4acb-b411-ea5903663d88) | ![@JinhwanB](https://github.com/Goorm-helpme/youtube_clone/assets/123534245/ed9ba483-336b-4161-9e89-d57a3198e46d) | ![@K-Jae-min](https://github.com/Goorm-helpme/youtube_clone/assets/123534245/cae394c4-5cfd-4cb9-906e-0b983b09e61b) | ![@PerfectlyElastic](https://github.com/Goorm-helpme/youtube_clone/assets/123534245/d47107f9-e584-4fc3-8518-b14c42c34cbf) |
+| ![@WhiteKIM](https://github.com/Goorm-helpme/youtube_clone/assets/123534245/3409dab9-dc57-484f-85d7-8952b7810ce8) | ![@JahyunChoi](https://github.com/Goorm-helpme/youtube_clone/assets/119170650/fa5e2234-c2b6-4839-83a7-b3a17d0a609a) | ![@JinhwanB](https://github.com/Goorm-helpme/youtube_clone/assets/123534245/ed9ba483-336b-4161-9e89-d57a3198e46d) | ![@K-Jae-min](https://github.com/Goorm-helpme/youtube_clone/assets/123534245/cae394c4-5cfd-4cb9-906e-0b983b09e61b) | ![@PerfectlyElastic](https://github.com/Goorm-helpme/youtube_clone/assets/123534245/d47107f9-e584-4fc3-8518-b14c42c34cbf) |
 | [@WhiteKIM](https://github.com/WhiteKIM) | [@JahyunChoi](https://github.com/JahyunChoi) | [@JinhwanB](https://github.com/JinhwanB) | [@K-Jae-min](https://github.com/K-Jae-min) | [@PerfectlyElastic](https://github.com/PerfectlyElastic) |
 | 조원 | 조원 | 조장 | 조원 | 조원 |
 | 백엔드 개발자 | 풀스택 개발자 | 백엔드 개발자 | 풀스택 개발자 | 백엔드 개발자 |

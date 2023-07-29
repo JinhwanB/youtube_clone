@@ -1,0 +1,391 @@
+input:focus {
+  outline: none;
+}
+:root {
+  --white-color: #f0f0f0;
+  --black-color: #0f0f0f;
+  --blue-color: #045fd4;
+  --red-color: #ff0000;
+  --grey-dark-color: #909090;
+  --grey-light-color: #e0e0e0;
+
+  --padding: 12px;
+  --avartar-size: 36px;
+
+  --font-large: 18px;
+  --font-medium: 14px;
+  --font-small: 12px;
+  --font-micro: 10px;
+}
+
+* {
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+button,
+button:focus {
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+input[class^="btn"] {
+  color: var(--black-color);
+  width: 75px;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+input[class^="btn"]:hover {
+  background-color: var(--black-color);
+  color: var(--white-color);
+}
+
+button[class^="btn"] {
+  width: 75px;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+
+button[class^="btn"]:hover {
+  background-color: var(--black-color);
+  color: var(--white-color);
+}
+
+button[class^="btn-delete"]:hover {
+  color: var(--red-color);
+}
+
+.hidden {
+  display: none;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--padding);
+  background-color: var(--black-color);
+  color: var(--white-color);
+}
+
+header .logo {
+  font-size: var(--font-large);
+  font-weight: bold;
+}
+
+header .logo i {
+  color: var(--red-color);
+}
+
+header .icons .fa-search {
+  margin-right: var(--padding);
+}
+
+.page .leftPage {
+  margin-bottom: 3rem;
+}
+
+.player video {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+}
+
+body > .info {
+  padding: var(--padding);
+}
+
+.info .metadata .hashtags {
+  display: flex;
+  font-size: var(--font-small);
+  color: var(--blue-color);
+}
+
+.info .metadata .hashtags li {
+  margin-right: 3px;
+}
+
+.info .metadata .titleAndButton {
+  display: flex;
+}
+
+.info .metadata .titleAndButton .title {
+  font-size: var(--font-medium);
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  margin-right: var(--padding);
+}
+
+.info .metadata .titleAndButton .moreBtn {
+  height: 100%;
+}
+
+.info .views {
+  font-size: var(--font-small);
+  color: var(--grey-dark-color);
+}
+
+.info .actions {
+  display: flex;
+  justify-content: space-around;
+  margin: var(--padding) 0;
+}
+
+.info .actions button {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--font-small);
+  color: var(--grey-dark-color);
+}
+
+.info .actions button i {
+  margin: 0 auto;
+  margin-bottom: calc(var(--padding) / 2);
+  font-size: 16px;
+}
+
+.info .actions button i.active {
+  color: var(--blue-color);
+}
+
+.channel {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid var(--grey-light-color);
+  border-bottom: 1px solid var(--grey-light-color);
+}
+
+.channel .metadata {
+  display: flex;
+  align-items: center;
+}
+
+.channel .metadata .info {
+  display: flex;
+  flex-direction: column;
+}
+.channel .metadata img {
+  width: var(--avartar-size);
+  height: var(--avartar-size);
+  border-radius: 50%;
+  margin: 0 10px;
+}
+
+.channel .metadata .info .name .subscribe {
+  font-size: var(--font-small);
+  color: var(--grey-dark-color);
+}
+
+.channel .subscribe {
+  text-transform: uppercase;
+  color: var(--blue-color);
+  font-size: var(--font-medium);
+}
+
+.comment {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: var(--padding);
+}
+
+.comment .commentPost {
+  display: flex;
+  flex-direction: column;
+  margin-left: var(--padding);
+  margin-bottom: var(--padding);
+  width: 100%;
+}
+
+.comment input {
+  margin-bottom: var(--padding);
+}
+
+.comment .commentPost .commentPostName {
+  width: 20%;
+  border-left-width: 0;
+  border-right-width: 0;
+  border-top-width: 0;
+  border-bottom-width: 1;
+}
+
+.comment .commentPost .commentPostContent {
+  width: 100%;
+}
+
+.comment .commentPost .commentPostContent .commentPostInput {
+  width: 95%;
+  border-left-width: 0;
+  border-right-width: 0;
+  border-top-width: 0;
+  border-bottom-width: 1;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+.comment-list {
+  margin-bottom: var(--padding);
+}
+
+.comment-list > li {
+  margin-bottom: var(--padding);
+}
+
+.comment-list input {
+  margin-bottom: var(--padding);
+}
+
+.commentGet {
+  margin-left: var(--padding);
+  margin-top: var(--padding);
+  display: flex;
+  flex-direction: column;
+}
+
+.commentGet > div {
+  margin-bottom: var(--padding);
+}
+
+.commentGet .commentGetName {
+  font-size: var(--font-medium);
+  font-weight: bold;
+}
+
+.comment .commentGetContent {
+  font-size: var(--font-small);
+}
+
+.commentGet .commentfuncion {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#reply {
+  margin-bottom: 3rem;
+}
+
+.replyget {
+  margin-left: var(--padding);
+}
+
+.replyPost {
+  display: flex;
+  flex-direction: column;
+  margin-left: var(--padding);
+  width: 100%;
+}
+.replyPost .replyPostName {
+  width: 23%;
+  border-left-width: 0;
+  border-right-width: 0;
+  border-top-width: 0;
+  border-bottom-width: 1;
+}
+.replyPost .replyPostContent {
+  width: 100%;
+}
+.replyPost .replyPostContent .replyPostInput {
+  width: 95%;
+  border-left-width: 0;
+  border-right-width: 0;
+  border-top-width: 0;
+  border-bottom-width: 1;
+}
+
+.replyget > div {
+  margin-bottom: var(--padding);
+}
+
+.replyget .replyGetName {
+  font-size: var(--font-medium);
+  font-weight: bold;
+}
+
+.replyget .replyGetContent {
+  font-size: var(--font-small);
+}
+
+.recomClip {
+  padding: 0 var(--padding);
+}
+
+.recomClip > .title {
+  font-size: var(--font-medium);
+  color: var(--grey-dark-color);
+  margin-bottom: calc(var(--padding) / 2);
+}
+
+.recomClip .item {
+  display: flex;
+  margin-top: var(--padding);
+}
+
+.recomClip .item .img {
+  flex: 1 1 40%;
+  margin-right: var(--padding);
+}
+
+.recomClip .item .img img {
+  border-radius: 0.5rem;
+  width: 100%;
+}
+
+.recomClip .item .info {
+  flex: 1 1 55%;
+}
+
+.recomClip .item .moreBtn {
+  flex: 1 1 5%;
+}
+
+.recomClip .item .info {
+  display: flex;
+  flex-direction: column;
+}
+
+.recomClip .item .info .title {
+  font-size: var(--font-medium);
+}
+
+.recomClip .item .info .name,
+.recomClip .item .info .view {
+  font-size: var(--font-micro);
+  color: var(--grey-dark-color);
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (min-width: 1000px) {
+  .page {
+    flex-direction: row;
+    margin-right: var(--padding) 0;
+  }
+
+  .page .leftPage {
+    flex: 1 1 75%;
+  }
+  .page .rightPage {
+    flex: 1 1 25%;
+  }
+}

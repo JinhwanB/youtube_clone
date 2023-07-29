@@ -27,4 +27,8 @@ public class ReplyService {
     public List<Reply> findByParentId(Long parentId) {
         return repository.findByParentId(parentId);
     }
+
+    public Reply findOne(Long id) {
+        return repository.findById(id);
+    }
 }

@@ -1,16 +1,6 @@
 <!DOCTYPE html>
-<html lang="ko" xmlns:th="http://www.thymeleaf.org">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/f72fca5426.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
-    <link rel="icon" href="/static/images/youtube.ico">
-    <link rel="stylesheet" href="/static/css/style.css">
-    <title>Youtube Clone</title>
-</head>
-
+<html xmlns:th="http://www.thymeleaf.org">
+<th:block th:replace="~{layout/head :: head}"></th:block>
 <body>
 <!-- header -->
 <header>
@@ -113,6 +103,6 @@
     </section>
 </div>
 </body>
-<script src="/static/js/main.js"></script>
+<script src="/js/main.js"></script>
 
 </html>

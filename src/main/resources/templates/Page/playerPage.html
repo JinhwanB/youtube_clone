@@ -71,36 +71,37 @@
 
       <ul class="comment-list">
         <!-- 여기부터 -->
-        <li>
+        <li th:each="comment : ${comments}">
           <!-- 댓글 -->
           <div class="commentGet">
-            <div class="commentGetName">@살려조_김재민</div>
-            <div class="commentGetContent">살려주세요...</div>
+            <div class="commentGetName" th:text="${comment.commentName}"></div>
+            <div class="commentGetContent" th:text="${comment.commentContent}"></div>
             <div class="commentfuncion">
               <button class="btn replyPostEdit">답글</button>
               <div class="commentMode">
                 <button class="btn commentModify">수정</button>
-                <button class="btn-delete commentDelet">삭제</button>
+                <button class="btn-delete commentDelet" th:onclick="">삭제</button>
               </div>
             </div>
-
             <!-- 대댓글 -->
             <div id="replys" class="hidden">
-              <form action="" id="reply">
+              <form action="/reply/save" id="reply" method="post">
                 <div class="replyPost">
-                  <input class="replyPostName" type="text" placeholder="닉네임 등록..."></input>
+                  <input type="hidden" name="parentId" th:value="${comment.commentId}">
+                  <input type="hidden" name="boardId" th:value="${comment.boardId}">
+                  <input class="replyPostName" name="username" type="text" placeholder="닉네임 등록..."></input>
                   <div class="replyPostContent">
-                    <textarea class="replyPostInput" type="text" value="" placeholder="답글 추가..."></textarea>
+                    <textarea class="replyPostInput" name="content" type="text" value="" placeholder="답글 추가..."></textarea>
                     <input type="submit" class="btn ReplyPosting" value="등록"></input>
                   </div>
                 </div>
               </form>
               <ul class="reply-list">
-                <li>
+                <li th:each="reply : ${comment.reply}">
                   <!-- 여기부터 -->
                   <div class="replyget">
-                    <div class="replyGetName">@살려조_배진환</div>
-                    <div class="replyGetContent">제발요...</div>
+                    <div class="replyGetName" th:text="${reply.username}"></div>
+                    <div class="replyGetContent" th:text="${reply.content}">제발요...</div>
                     <div class="replyMode">
                       <button class="btn replyModify">수정</button>
                       <button class="btn-delete replyDelet">삭제</button>

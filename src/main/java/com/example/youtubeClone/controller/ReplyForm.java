@@ -12,6 +12,7 @@ import lombok.Setter;
 public class ReplyForm {
     private Long parentId;
     private Long boardId;
+    private Long id;
     private String content;
     private String username;
 }

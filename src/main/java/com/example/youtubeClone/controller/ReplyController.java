@@ -17,7 +17,7 @@ public class ReplyController {
     private final ReplyService replyService;
 
     @PostMapping("/save")
-    public String replySave(@RequestBody ReplyForm replyForm) {
+    public String replySave(@ModelAttribute ReplyForm replyForm) {
         Reply reply = new Reply();
         reply.setContent(replyForm.getContent());
         reply.setUsername(replyForm.getUsername());
@@ -28,13 +28,13 @@ public class ReplyController {
         return "redirect:/";
     }
 
-    @PostMapping("/update/{id}")
-    public String replyUpdate(@PathVariable Long id, @RequestBody ReplyForm replyForm) {
-        Reply reply = replyService.findOne(id);
+    @PostMapping("/update}")
+    public String replyUpdate(@RequestBody ReplyForm replyForm) {
+        Reply reply = replyService.findOne(replyForm.getId());
 
         reply.setContent(replyForm.getContent());
         reply.setDateTime(LocalDateTime.now().toString());
-        replyService.updateReply(id, reply);
+        replyService.updateReply(reply.getId(), reply);
 
         return "redirect:/";
     }

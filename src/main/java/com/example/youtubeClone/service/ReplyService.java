@@ -1,5 +1,6 @@
 package com.example.youtubeClone.service;
 
+import com.example.youtubeClone.dto.Comment;
 import com.example.youtubeClone.dto.Reply;
 import com.example.youtubeClone.repository.Reply.ReplyRepository;
 import lombok.RequiredArgsConstructor;
@@ -11,6 +12,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ReplyService {
     private final ReplyRepository repository;
+    private final CommentService commentService;
 
     public void addReply(Long parentId, Reply reply) {
         repository.save(parentId, reply);

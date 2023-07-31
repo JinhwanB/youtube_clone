@@ -2,12 +2,12 @@ package com.example.youtubeClone.controller;
 
 import com.example.youtubeClone.dto.Reply;
 import com.example.youtubeClone.service.ReplyService;
-import jakarta.websocket.server.PathParam;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
+import java.util.Map;
 
 @Controller
 @RequiredArgsConstructor
@@ -28,7 +28,7 @@ public class ReplyController {
         return "redirect:/";
     }
 
-    @PostMapping("/update}")
+    @PostMapping("/update")
     public String replyUpdate(@RequestBody ReplyForm replyForm) {
         Reply reply = replyService.findOne(replyForm.getId());
 
@@ -39,10 +39,11 @@ public class ReplyController {
         return "redirect:/";
     }
 
-    @DeleteMapping("/delete/{id}")
-    public String replyDelete(@PathVariable Long id) {
-        replyService.deleteReply(id);
-
+    @DeleteMapping("/delete")
+    public String replyDelete(@RequestBody Map<String, Long> data) {
+        Long id = data.get("id");
+        Long parentId = data.get("parentId");
+        replyService.deleteReply(parentId, id);
         return "redirect:/";
     }
 }

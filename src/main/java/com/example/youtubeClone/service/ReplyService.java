@@ -22,7 +22,16 @@ public class ReplyService {
         repository.update(id, reply);
     }
 
-    public void deleteReply(Long id) {
+    public void deleteReply(Long parentId, Long id) {
+        System.out.println("commentId : "+parentId);
+        Comment comment = commentService.findCommentOne(parentId);
+        List<Reply> replyList = comment.getReply();
+        for(int i = 0; i < replyList.size(); i++) {
+            if(replyList.get(i).getId() == id) {
+                replyList.remove(i);
+            }
+        }
+        comment.setReply(replyList);
         repository.delete(id);
     }
 

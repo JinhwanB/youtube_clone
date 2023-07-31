@@ -2,7 +2,6 @@ package com.example.youtubeClone.controller;
 
 import com.example.youtubeClone.dto.Reply;
 import com.example.youtubeClone.service.ReplyService;
-import jakarta.websocket.server.PathParam;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -28,7 +27,7 @@ public class ReplyController {
         return "redirect:/";
     }
 
-    @PostMapping("/update}")
+    @PostMapping("/update")
     public String replyUpdate(@RequestBody ReplyForm replyForm) {
         Reply reply = replyService.findOne(replyForm.getId());
 

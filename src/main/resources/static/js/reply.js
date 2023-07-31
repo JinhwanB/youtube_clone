@@ -1,21 +1,29 @@
-function replyDelete(id) {
+function replyUpdateButton() {
+     document.getElementById('replyPostContent').readOnly = false;
+     const container = document.querySelector('.replyMode')
+     var button = '<button class="btn ReplyPosting" onclick="replyUpdate()">등록</button>'
+     container.innerHTML += button;
+}
+
+function replyDelete(id, parentId) {
     let data = {
+        parentId : parentId,
         id : id,
     }
     httpRequest = new XMLHttpRequest();
-    httpRequest.open("DELETE","/board/delete", true);
+    httpRequest.open("DELETE","/reply/delete", true);
     httpRequest.responseType = "json";
     httpRequest.setRequestHeader("Content-Type","application/json");
     httpRequest.send(JSON.stringify(data));
     setTimeout(function(){
-        window.location.href="/reply/delete/"+id;
+        window.location.href="/player";
     }, 300);
 }
 
-function replyUpdate(id, content) {
+function replyUpdate() {
     let data = {
-        id : id,
-        content : content,
+        id : document.getElementById("reply-id").value,
+        content : document.getElementById("replyPostContent").value,
     }
     httpRequest = new XMLHttpRequest();
     httpRequest.open("POST","/reply/update", true);

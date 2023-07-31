@@ -53,6 +53,11 @@ public class MemoryReplyRepository implements ReplyRepository{
     }
 
     @Override
+    public Reply findById(Long id) {
+        return replyMap.get(id);
+    }
+
+    @Override
     public void clear() {
         replyMap.clear();
     }

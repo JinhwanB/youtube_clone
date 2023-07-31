@@ -11,5 +11,7 @@ public interface ReplyRepository {
     void delete(Long id);
     List<Reply> findByParentId(Long parentId);
 
+    Reply findById(Long id);
+
     void clear();
 }

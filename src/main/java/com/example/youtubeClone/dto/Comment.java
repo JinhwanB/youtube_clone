@@ -16,4 +16,8 @@ public class Comment {
     private List<Reply> reply = new ArrayList<>();//대댓글이 저장됨
 
     private String videoId; // 영상 id
+
+    public void addReply(Reply reply) {
+        this.reply.add(reply);
+    }
 }

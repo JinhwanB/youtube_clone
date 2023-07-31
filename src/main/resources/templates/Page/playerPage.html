@@ -27,25 +27,25 @@
         </ul>
         <div class="titleAndButton">
           <span class="title"> 개인 클론 프로잭트 & 살려조 사이드 팀 프로잭트 HTML, CSS, Javascript, 댓글 CRUD 연결하기 </span>
-          <button type="button" class="moreBtn"><i class="fas fa-caret-down"></i></button>
+          <button class="moreBtn"><i class="fas fa-caret-down"></i></button>
         </div>
         <span class="views">조회수 100만회 오늘</span>
       </div>
       <ul class="actions">
         <li>
-          <button type="button"><i class="fas fa-thumbs-up"></i><span>100만</span></button>
+          <button><i class="fas fa-thumbs-up"></i><span>100만</span></button>
         </li>
         <li>
-          <button type="button"><i class="fas fa-thumbs-down"></i><span>0</span></button>
+          <button><i class="fas fa-thumbs-down"></i><span>0</span></button>
         </li>
         <li>
-          <button type="button"><i class="fas fa-share"></i><span>공유</span></button>
+          <button><i class="fas fa-share"></i><span>공유</span></button>
         </li>
         <li>
-          <button type="button"><i class="fas fa-plus"></i><span>저장</span></button>
+          <button><i class="fas fa-plus"></i><span>저장</span></button>
         </li>
         <li>
-          <button type="button"><i class="fab fa-font-awesome-flag"></i><span>신고</span></button>
+          <button><i class="fab fa-font-awesome-flag"></i><span>신고</span></button>
         </li>
       </ul>
       <div class="channel">
@@ -56,15 +56,19 @@
             <span class="subscribers">구독자 100만명</span>
           </div>
         </div>
+<<<<<<< Updated upstream
         <button type="button" class="subscribe">구독</button>
+=======
+        <button class="subscribe">구독</button>
+>>>>>>> Stashed changes
       </div>
     </section>
 
     <form th:action="|/video/comment/create/${videoId}|" method="post" id="commentComit" class="comment">
       <div class="commentPost">
-        <input name="commentName" class="commentPostName" type="text" placeholder="닉네임 등록..." required>
+        <input name="commentName" class="commentPostName" type="text" placeholder="닉네임 등록...">
         <div class="commentPostContent">
-          <textarea name="commentContent" class="commentPostInput" type="text" value="" placeholder="댓글 추가..." style="resize:none;" required></textarea>
+          <textarea name="commentContent" class="commentPostInput" type="text" value="" placeholder="댓글 추가..."></textarea>
           <input type="submit" class="btn CommentPosting" value="등록">
         </div>
       </div>
@@ -75,28 +79,25 @@
       <li th:each="comment : ${comments}">
         <!-- 댓글 -->
         <div class="commentGet">
-          <!-- 댓글 수정 구현 -->
-          <form th:action="|/video/comment/updated/${comment?.commentId}|" method="post" class="commentModifyForm">
-            <input name="commentName" class="commentGetName" th:value="|${comment?.commentName}|" readonly>
-            <textarea name="commentContent" class="commentGetContent" th:text="${comment?.commentContent}" style="resize:none;" readonly></textarea>
-            <div class="commentfuncion">
-              <button type="button" class="btn replyPostEdit">답글</button>
-              <div class="commentMode">
-                <button type="button" class="btn-modify commentModify">수정</button>
-                <a th:onclick="onDelete([[${comment?.commentId}]]);" class="btn-delete commentDelet">삭제</a>
-              </div>
+          <div class="commentGetName" th:text="|@${comment?.commentName}|"></div>
+          <div class="commentGetContent" th:text="${comment?.commentContent}"></div>
+          <div class="commentfuncion">
+            <button class="btn replyPostEdit">답글</button>
+            <div class="commentMode">
+              <button class="btn commentModify">수정</button>
+              <a th:onclick="onDelete([[${comment?.commentId}]]);" class="btn-delete commentDelet">삭제</a>
             </div>
-          </form>
+          </div>
           <!-- 대댓글 -->
           <div id="replys" class="hidden">
             <form action="/reply/save" id="reply" method="post">
               <div class="replyPost">
                 <input type="hidden" name="parentId" th:value="${comment.commentId}">
                 <input type="hidden" name="boardId" th:value="${comment.boardId}">
-                <input class="replyPostName" name="username" type="text" placeholder="닉네임 등록..." required>
+                <input class="replyPostName" name="username" type="text" placeholder="닉네임 등록..."></input>
                 <div class="replyPostContent">
-                  <textarea class="replyPostInput" name="content" type="text" value="" placeholder="답글 추가..." style="resize:none;" required></textarea>
-                  <input type="submit" class="btn ReplyPosting" value="등록">
+                  <textarea class="replyPostInput" name="content" type="text" value="" placeholder="답글 추가..."></textarea>
+                  <input type="submit" class="btn ReplyPosting" value="등록"></input>
                 </div>
               </div>
             </form>
@@ -137,7 +138,7 @@
             <span class="name">살려조</span>
             <span class="view">조회수 100만회</span>
           </div>
-          <button type="button" class="moreBtn"><i class="fas fa-ellipsis-v"></i></button>
+          <button class="moreBtn"><i class="fas fa-ellipsis-v"></i></button>
         </li>
         <li class="item">
           <div class="img"><img src="/images/기훈이형.png" alt="" /></div>
@@ -146,7 +147,7 @@
             <span class="name">살려조</span>
             <span class="view">조회수 100만회</span>
           </div>
-          <button type="button" class="moreBtn"><i class="fas fa-ellipsis-v"></i></button>
+          <button class="moreBtn"><i class="fas fa-ellipsis-v"></i></button>
         </li>
         <li class="item">
           <div class="img"><img src="/images/무궁화꽃.png" alt="" /></div>
@@ -155,7 +156,7 @@
             <span class="name">살려조</span>
             <span class="view">조회수 100만회</span>
           </div>
-          <button type="button" class="moreBtn"><i class="fas fa-ellipsis-v"></i></button>
+          <button class="moreBtn"><i class="fas fa-ellipsis-v"></i></button>
         </li>
         <li class="item">
           <div class="img"><img src="/images/깐부끼린.png" alt="" /></div>
@@ -164,7 +165,7 @@
             <span class="name">살려조</span>
             <span class="view">조회수 100만회</span>
           </div>
-          <button type="button" class="moreBtn"><i class="fas fa-ellipsis-v"></i></button>
+          <button class="moreBtn"><i class="fas fa-ellipsis-v"></i></button>
         </li>
         <li class="item">
           <div class="img"><img src="/images/기훈이형.png" alt="" /></div>
@@ -173,7 +174,7 @@
             <span class="name">살려조</span>
             <span class="view">조회수 100만회</span>
           </div>
-          <button type="button" class="moreBtn"><i class="fas fa-ellipsis-v"></i></button>
+          <button class="moreBtn"><i class="fas fa-ellipsis-v"></i></button>
         </li>
         <li class="item">
           <div class="img"><img src="/images/무궁화꽃.png" alt="" /></div>
@@ -182,7 +183,7 @@
             <span class="name">살려조</span>
             <span class="view">조회수 100만회</span>
           </div>
-          <button type="button" class="moreBtn"><i class="fas fa-ellipsis-v"></i></button>
+          <button class="moreBtn"><i class="fas fa-ellipsis-v"></i></button>
         </li>
         <li class="item">
           <div class="img"><img src="/images/깐부끼린.png" alt="" /></div>
@@ -191,7 +192,7 @@
             <span class="name">살려조</span>
             <span class="view">조회수 100만회</span>
           </div>
-          <button type="button" class="moreBtn"><i class="fas fa-ellipsis-v"></i></button>
+          <button class="moreBtn"><i class="fas fa-ellipsis-v"></i></button>
         </li>
         <li class="item">
           <div class="img"><img src="/images/기훈이형.png" alt="" /></div>
@@ -200,7 +201,7 @@
             <span class="name">살려조</span>
             <span class="view">조회수 100만회</span>
           </div>
-          <button type="button" class="moreBtn"><i class="fas fa-ellipsis-v"></i></button>
+          <button class="moreBtn"><i class="fas fa-ellipsis-v"></i></button>
         </li>
         <li class="item">
           <div class="img"><img src="/images/무궁화꽃.png" alt="" /></div>
@@ -209,7 +210,7 @@
             <span class="name">살려조</span>
             <span class="view">조회수 100만회</span>
           </div>
-          <button type="button" class="moreBtn"><i class="fas fa-ellipsis-v"></i></button>
+          <button class="moreBtn"><i class="fas fa-ellipsis-v"></i></button>
         </li>
       </ul>
     </section>

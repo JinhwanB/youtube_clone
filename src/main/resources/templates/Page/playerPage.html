@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <th:block th:replace="~{layout/head :: head}"></th:block>
+<link rel="stylesheet" href="/css/playerPage.css">
 <body>
   <header>
     <div class="logo">
@@ -59,28 +60,28 @@
         </div>
       </section>
 
-      <form id="commentComit" class="comment">
+      <form th:action="|/video/comment/create/${videoId}|" method="post" id="commentComit" class="comment">
         <div class="commentPost">
-          <input class="commentPostName" type="text" placeholder="닉네임 등록..."></input>
+          <input name="commentName" class="commentPostName" type="text" placeholder="닉네임 등록...">
           <div class="commentPostContent">
-            <textarea class="commentPostInput" type="text" value="" placeholder="댓글 추가..."></textarea>
-            <input type="submit" class="btn CommentPosting" value="등록"></input>
+            <textarea name="commentContent" class="commentPostInput" type="text" value="" placeholder="댓글 추가..."></textarea>
+            <input type="submit" class="btn CommentPosting" value="등록">
           </div>
         </div>
       </form>
 
       <ul class="comment-list">
         <!-- 여기부터 -->
-        <li th:each="comment : ${comments}">
+        <li th:each="comment : ${commentList}">
           <!-- 댓글 -->
           <div class="commentGet">
-            <div class="commentGetName" th:text="${comment.commentName}"></div>
-            <div class="commentGetContent" th:text="${comment.commentContent}"></div>
+            <div class="commentGetName" th:text="|@${comment?.commentName}|"></div>
+            <div class="commentGetContent" th:text="${comment?.commentContent}"></div>
             <div class="commentfuncion">
               <button class="btn replyPostEdit">답글</button>
               <div class="commentMode">
                 <button class="btn commentModify">수정</button>
-                <button class="btn-delete commentDelet" th:onclick="">삭제</button>
+                <a th:onclick="onDelete([[${comment?.commentId}]]);" class="btn-delete commentDelet">삭제</a>
               </div>
             </div>
             <!-- 대댓글 -->

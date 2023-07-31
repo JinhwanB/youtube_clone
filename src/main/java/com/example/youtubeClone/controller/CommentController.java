@@ -8,6 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Controller
 @Slf4j
 @RequiredArgsConstructor
@@ -26,7 +28,7 @@ public class CommentController {
     public String updateComment(@RequestParam Long id, Model model){
         Comment comment = commentService.findCommentOne(id);
         model.addAttribute("cComment", comment);
-        return "videoPlay";
+        return "page/playerPage";
     }
 
     @PostMapping("/updated/{id}") // 댓글 수정 완료
@@ -38,8 +40,8 @@ public class CommentController {
 
     @GetMapping("/delete") // 댓글 삭제
     public String deleteComment(@RequestParam Long id){
-        commentService.commentDelete(id);
         String videoId = commentService.findCommentOne(id).getVideoId();
+        commentService.commentDelete(id);
         return "redirect:/video?id=" + videoId;
     }
 }

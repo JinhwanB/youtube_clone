@@ -26,11 +26,10 @@ public class VideoController {
     @GetMapping("/video") // 영상 재생되는 페이지
     public String videoHome(@RequestParam String id, Model model) throws GeneralSecurityException, IOException {
         List<Video> videoListExceptCurrentVideo = videoService.findVideoListExceptCurrentVideo(id);
-        Video video = videoService.findVideo(id);
         List<Comment> commentAll = commentService.findCommentAll(id);
-        model.addAttribute("video", video);
+        model.addAttribute("videoId", id);
         model.addAttribute("videoList", videoListExceptCurrentVideo);
         model.addAttribute("commentList", commentAll);
-        return "videoPlay";
+        return "page/playerPage";
     }
 }

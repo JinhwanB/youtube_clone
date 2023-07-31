@@ -70,6 +70,26 @@ button[class^="btn-delete"]:hover {
   color: var(--red-color);
 }
 
+a[class^="btn"]{
+    display:inline-block;
+  width: 75px;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  text-align: center;
+  color:var(--black-color);
+  text-decoration:none;
+  cursor:pointer;
+}
+
+a[class^="btn"]:hover{
+    background-color: var(--black-color);
+    color: var(--white-color);
+}
+
+a[class^="btn-delete"]:hover{
+    color: var(--red-color);
+}
+
 .hidden {
   display: none;
 }

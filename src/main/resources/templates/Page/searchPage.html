@@ -9,16 +9,14 @@
         <!-- 아이콘, 텍스트, 검색창 -->
         <span class="logo">
           <i class="fa fa-brands fa-youtube"></i>
-          <a href="https://www.youtube.com/"><span class="title">Youtube</span></a>
+          <a href="/"><span class="title">Youtube</span></a>
         </span>
       </div>
       <div class="searchBox">
         <span class="search">
           <input type="text" id="input-box" placeholder="검색">
-          <button onclick="searchBtn() " class="addBtn"><i class="fa-solid fa-magnifying-glass" style="color: #fff;"></i></button>
+          <button type="button" onclick="searchBtn() " class="addBtn"><i class="fa-solid fa-magnifying-glass" style="color: #fff;"></i></button>
         </span>
-      </div>
-        
       </div>
     </header>
     <!-- sidebar -->
@@ -43,133 +41,21 @@
       <!-- 비디오박스들이 자동으로 불러와지는 함수가 필요한가? -->
       <!-- <section class="videos"> upNext -->
         <ul class="videos">
-          <li class="item">
+          <li class="item" th:each="video : ${videoList}">
             <section class="player">
-            <video controls src="/video/cat.mp4"></video>
+              <a th:href="|/video?id=${video?.videoId}|"><img th:src="|https://img.youtube.com/vi/${video?.videoId}/mqdefault.jpg|" alt=""></a>
             </section>
-            <img src="/images/sum2.png">
             <div class="info"></div>
-            <span class="title">
+            <span th:text="${video?.videoTitle}" class="title">
               유튜브 클론코딩 작성중입니다 | 진행을 하고 있습니다. HTML, CSS, JAVASCRIPT 이용 예정입니다.
-            <span class="name">
+            </span>
+            <span th:text="${video?.channelTitle}" class="name">
               통닭모양고양이
+            </span>
             <span class="view">
               1M views one month ago
             </span>
-            <button class="moreBtn"><i class="fas fa-ellipsis-v"></i>
-            </button>
-          </li>
-          <li class="item">
-            <section class="player">
-            <video controls src="/video/cat.mp4"></video>
-            </section>
-            <img src="/images/sum2.png">
-            <div class="info"></div>
-            <span class="title">
-              유튜브 클론코딩 작성중입니다 | 진행을 하고 있습니다. HTML, CSS, JAVASCRIPT 이용 예정입니다.
-            <span class="name">
-              통닭모양고양이
-            <span class="view">
-              1M views one month ago
-            </span>
-            <button class="moreBtn"><i class="fas fa-ellipsis-v"></i>
-            </button>
-          </li>
-          <li class="item">
-            <section class="player">
-            <video controls src="/video/cat.mp4"></video>
-            </section>
-            <img src="/images/sum2.png">
-            <div class="info"></div>
-            <span class="title">
-              유튜브 클론코딩 작성중입니다 | 진행을 하고 있습니다. HTML, CSS, JAVASCRIPT 이용 예정입니다.
-            <span class="name">
-              통닭모양고양이
-            <span class="view">
-              1M views one month ago
-            </span>
-            <button class="moreBtn"><i class="fas fa-ellipsis-v"></i>
-            </button>
-          </li>
-          <li class="item">
-            <section class="player">
-            <video controls src="/video/cat.mp4"></video>
-            </section>
-            <img src="/images/sum2.png">
-            <div class="info"></div>
-            <span class="title">
-              유튜브 클론코딩 작성중입니다 | 진행을 하고 있습니다. HTML, CSS, JAVASCRIPT 이용 예정입니다.
-            <span class="name">
-              통닭모양고양이
-            <span class="view">
-              1M views one month ago
-            </span>
-            <button class="moreBtn"><i class="fas fa-ellipsis-v"></i>
-            </button>
-          </li>
-
-          <li class="item">
-            <section class="player">
-            <video controls src="/video/cat.mp4"></video>
-            </section>
-            <img src="/images/sum2.png">
-            <div class="info"></div>
-            <span class="title">
-              유튜브 클론코딩 작성중입니다 | 진행을 하고 있습니다. HTML, CSS, JAVASCRIPT 이용 예정입니다.
-            <span class="name">
-              통닭모양고양이
-            <span class="view">
-              1M views one month ago
-            </span>
-            <button class="moreBtn"><i class="fas fa-ellipsis-v"></i>
-            </button>
-          </li>
-          <li class="item">
-            <section class="player">
-            <video controls src="/video/cat.mp4"></video>
-            </section>
-            <img src="/images/sum2.png">
-            <div class="info"></div>
-            <span class="title">
-              유튜브 클론코딩 작성중입니다 | 진행을 하고 있습니다. HTML, CSS, JAVASCRIPT 이용 예정입니다.
-            <span class="name">
-              통닭모양고양이
-            <span class="view">
-              1M views one month ago
-            </span>
-            <button class="moreBtn"><i class="fas fa-ellipsis-v"></i>
-            </button>
-          </li>
-          <li class="item">
-            <section class="player">
-            <video controls src="/video/cat.mp4"></video>
-            </section>
-            <img src="/images/sum2.png">
-            <div class="info"></div>
-            <span class="title">
-              유튜브 클론코딩 작성중입니다 | 진행을 하고 있습니다. HTML, CSS, JAVASCRIPT 이용 예정입니다.
-            <span class="name">
-              통닭모양고양이
-            <span class="view">
-              1M views one month ago
-            </span>
-            <button class="moreBtn"><i class="fas fa-ellipsis-v"></i>
-            </button>
-          </li>
-          <li class="item">
-            <section class="player">
-            <video controls src="/video/cat.mp4"></video>
-            </section>
-            <img src="/images/sum2.png">
-            <div class="info"></div>
-            <span class="title">
-              유튜브 클론코딩 작성중입니다 | 진행을 하고 있습니다. HTML, CSS, JAVASCRIPT 이용 예정입니다.
-            <span class="name">
-              통닭모양고양이
-            <span class="view">
-              1M views one month ago
-            </span>
-            <button class="moreBtn"><i class="fas fa-ellipsis-v"></i>
+            <button type="button" class="moreBtn"><i class="fas fa-ellipsis-v"></i>
             </button>
           </li>
         </ul>

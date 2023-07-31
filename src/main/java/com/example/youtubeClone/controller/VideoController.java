@@ -27,6 +27,8 @@ public class VideoController {
     public String videoHome(@RequestParam String id, Model model) throws GeneralSecurityException, IOException {
         List<Video> videoListExceptCurrentVideo = videoService.findVideoListExceptCurrentVideo(id);
         List<Comment> commentAll = commentService.findCommentAll(id);
+        Video video = videoService.findVideo(id);
+        model.addAttribute("cVideo", video);
         model.addAttribute("videoId", id);
         model.addAttribute("videoList", videoListExceptCurrentVideo);
         model.addAttribute("commentList", commentAll);

@@ -24,17 +24,10 @@ public class CommentController {
         return "redirect:/video?id=" + id;
     }
 
-    @GetMapping("/update") // 댓글 수정 시 수정 전 댓글 내용 보여주기
-    public String updateComment(@RequestParam Long id, Model model){
-        Comment comment = commentService.findCommentOne(id);
-        model.addAttribute("cComment", comment);
-        return "page/playerPage";
-    }
-
-    @PostMapping("/updated/{id}") // 댓글 수정 완료
+    @PostMapping("/updated/{id}") // 댓글 수정
     public String updatedComment(@PathVariable Long id, Comment comment){
         commentService.commentUpdate(id, comment);
-        String videoId = comment.getVideoId();
+        String videoId = commentService.findCommentOne(id).getVideoId();
         return "redirect:/video?id=" + videoId;
     }
 

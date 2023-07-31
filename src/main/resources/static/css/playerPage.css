@@ -280,6 +280,20 @@ textarea:focus {
   flex-direction: column;
 }
 
+.commentGet input,
+.commentGet textarea{
+    border:none;
+    display:inline-block;
+    width:100%;
+    margin-bottom:var(--padding);
+}
+
+.commentGet input:focus,
+.commentGet textarea:focus{
+    outline:none;
+    border-bottom:1px solid var(--grey-dark-color);
+}
+
 .commentGet > div {
   margin-bottom: var(--padding);
 }

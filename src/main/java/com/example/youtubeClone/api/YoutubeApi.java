@@ -17,7 +17,7 @@ import java.util.List;
 
 public class YoutubeApi {
 
-    private static final String API_KEY = "여기에 api키 입력";
+    private static final String API_KEY = "";
 
     private YouTube youtube;
 

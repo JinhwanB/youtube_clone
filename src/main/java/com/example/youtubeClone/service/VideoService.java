@@ -26,4 +26,14 @@ public class VideoService {
     public List<Video> findVideoList() throws GeneralSecurityException, IOException {
         return videoRepository.getPopularVideos();
     }
+
+    public void like(String id) throws GeneralSecurityException, IOException {
+        Video video = videoRepository.getVideo(id);
+        video.getHeart().updateLike();
+    }
+
+    public void dislike(String id) throws GeneralSecurityException, IOException {
+        Video video = videoRepository.getVideo(id);
+        video.getHeart().updateDislike();
+    }
 }

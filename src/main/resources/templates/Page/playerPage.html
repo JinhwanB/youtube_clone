@@ -36,10 +36,11 @@
         </div>
         <ul class="actions">
           <li>
-            <button type="button"><i class="fas fa-thumbs-up"></i><span>100만</span></button>
-          </li>
-          <li>
-            <button type="button"><i class="fas fa-thumbs-down"></i><span>0</span></button>
+            <button th:data-id="${videoId}" th:onclick="clickLike(this.getAttribute('data-id'))"><i
+                    class="fas fa-thumbs-up"></i><span th:text="${heart.like}"></span></button>
+
+            <button th:data-id="${videoId}" th:onclick="clickDisLike(this.getAttribute('data-id'))"><i
+                    class="fas fa-thumbs-down"></i><span th:text="${heart.dislike}">0</span></button>
           </li>
           <li>
             <button type="button"><i class="fas fa-share"></i><span>공유</span></button>
@@ -149,4 +150,5 @@
 </body>
   <script src="/js/app.js"></script>
   <script src="/js/reply.js"></script>
+  <script src="/js/heart.js"></script>
 </html>

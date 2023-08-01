@@ -1,6 +1,7 @@
 package com.example.youtubeClone.controller;
 
 import com.example.youtubeClone.dto.Comment;
+import com.example.youtubeClone.dto.Heart;
 import com.example.youtubeClone.dto.Video;
 import com.example.youtubeClone.service.CommentService;
 import com.example.youtubeClone.service.VideoService;
@@ -28,8 +29,10 @@ public class VideoController {
         List<Video> videoListExceptCurrentVideo = videoService.findVideoListExceptCurrentVideo(id);
         List<Comment> commentAll = commentService.findCommentAll(id);
         Video video = videoService.findVideo(id);
+        Heart heart = videoService.findVideo(id).getHeart();
         model.addAttribute("cVideo", video);
         model.addAttribute("videoId", id);
+        model.addAttribute("heart", heart);
         model.addAttribute("videoList", videoListExceptCurrentVideo);
         model.addAttribute("commentList", commentAll);
         return "page/playerPage";

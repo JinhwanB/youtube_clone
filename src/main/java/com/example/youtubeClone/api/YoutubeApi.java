@@ -17,7 +17,7 @@ import java.util.List;
 
 public class YoutubeApi {
 
-    private static final String API_KEY = "AIzaSyBqCqkIaLDP-4R48t-IrNWSxXZISLZ8Q2o";
+    private static final String API_KEY = "";
 
     private YouTube youtube;
 

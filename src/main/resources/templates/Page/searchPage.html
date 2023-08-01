@@ -3,68 +3,67 @@
 <th:block th:replace="~{layout/head :: head}"></th:block>
 <link rel="stylesheet" href="/css/SearchPage.css">
 <body>
-  <div class="container">
-    <header>
-      <div class="logoBox">
-        <!-- 아이콘, 텍스트, 검색창 -->
-        <span class="logo">
-          <i class="fa fa-brands fa-youtube"></i>
-          <a href="/"><span class="title">Youtube</span></a>
-        </span>
-      </div>
-      <div class="searchBox">
-        <span class="search">
-          <input type="text" id="input-box" placeholder="검색">
-          <button type="button" onclick="searchBtn() " class="addBtn"><i class="fa-solid fa-magnifying-glass" style="color: #fff;"></i></button>
-        </span>
-      </div>
-    </header>
-    <!-- sidebar -->
-    <div class="sidebarBox">
-      <input type="checkbox" id="trigger">
-      <label for="trigger">
-        <i class="fa-solid fa-grip-lines"></i>
-      </label>
-      <div class="sidebar">
-        <div class="icons">
-          <a class="iconBox" href="https://www.youtube.com/"><i class="icon fa-solid fa-house"><div class="iconText">홈</div></i></a>
-          <a class="iconBox" href="https://www.youtube.com/"><i class="icon fa-solid fa-video"><div class="iconText">shorts</div></i></a>
-          <a class="iconBox" href="https://www.youtube.com/"><i class="icon fa-solid fa-thumbs-up"><div class="iconText">likes</div></i></a>
-          <a class="iconBox" href="https://music.youtube.com/"><i class="icon fa-solid fa-music"><div class="iconText">music</div></i></a>
-        </div>
+  <header>
+    <label for="trigger">
+      <i class="fa-solid fa-grip-lines"></i>
+    </label>
+    <div class="logoBox">
+      <!-- 아이콘, 텍스트, 검색창 -->
+      <span class="logo">
+        <i class="fa logoIcons fa-brands fa-youtube"></i>
+        <a href="/"><span class="topTitle">Youtube</span></a>
+      </span>
+    </div>
+    <div class="searchBox">
+      <span class="search">
+        <input type="text" id="input-box" placeholder="검색">
+        <button type="button" class="addBtn"><i class="youtube fa-solid fa-magnifying-glass" style="color: #fff;"></i></button>
+      </span>
+    </div>
+  </header>
+
+  <!-- sidebar -->
+  <div class="sidebarBox">
+    <input type="checkbox" id="trigger">
+    <label for="trigger">
+      <i class="fa-solid fa-grip-lines"></i>
+    </label>
+    <div class="sidebar">
+      <div class="icons">
+        <a class="iconBox" href="/"><i class="icon fa-solid fa-house"><div class="iconText">홈</div></i></a>
+        <a class="iconBox" href="#"><i class="icon fa-solid fa-video"><div class="iconText">shorts</div></i></a>
+        <a class="iconBox" href="#"><i class="icon fa-solid fa-thumbs-up"><div class="iconText">likes</div></i></a>
+        <a class="iconBox" href="#"><i class="icon fa-solid fa-music"><div class="iconText">music</div></i></a>
       </div>
     </div>
-    
+
+    <!-- video부분 -->
     <main>
-      <!-- 영상들 main 정렬 -->
-      <!-- 비디오박스들이 반복되면 정렬된다 -->
-      <!-- 비디오박스들이 자동으로 불러와지는 함수가 필요한가? -->
-      <!-- <section class="videos"> upNext -->
-        <ul class="videos">
+        <ul class="videoList">
           <li class="item" th:each="video : ${videoList}">
             <section class="player">
               <a th:href="|/video?id=${video?.videoId}|"><img th:src="|https://img.youtube.com/vi/${video?.videoId}/mqdefault.jpg|" alt=""></a>
             </section>
-            <div class="info"></div>
-            <span th:text="${video?.videoTitle}" class="title">
-              유튜브 클론코딩 작성중입니다 | 진행을 하고 있습니다. HTML, CSS, JAVASCRIPT 이용 예정입니다.
-            </span>
-            <span th:text="${video?.channelTitle}" class="name">
-              통닭모양고양이
-            </span>
-            <span class="view">
-              1M views one month ago
-            </span>
-            <button type="button" class="moreBtn"><i class="fas fa-ellipsis-v"></i>
-            </button>
+            <section class="inboBox">
+              <span class="titleBox">
+                <a th:href="|/video?id=${video?.videoId}|"><img class="profileImg" th:src="|https://img.youtube.com/vi/${video?.videoId}/mqdefault.jpg|" alt=""></a>
+                <a th:href="|/video?id=${video?.videoId}|"><span class="title" th:text="${video?.videoTitle}"></span></a>
+                <button type="button" class="moreBtn"><i class="fas fa-ellipsis-v"></i></button>
+              </span>
+              <div class="info">
+                <span th:text="|By. ${video?.channelTitle}|" class="name"></span>
+                <span class="view">
+                  1M views one month ago
+                </span>
+              </div>
+            </section>
           </li>
         </ul>
-      <!-- </section> -->
     </main>
-    <th:block th:replace="~{layout/footer :: footer}">
-
-    </th:block>
   </div>
+  <th:block th:replace="~{layout/footer :: footer}">
+
+  </th:block>
 </body>
 </html>
 

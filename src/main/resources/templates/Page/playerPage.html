@@ -75,10 +75,10 @@
 
     <ul class="comment-list">
       <!-- 여기부터 -->
-      <li th:each="comment : ${comments}">
+      <li th:each="comment : ${commentList}">
         <!-- 댓글 -->
         <div class="commentGet">
-          <div class="commentGetName" th:text="|@${comment?.commentName}|"></div>
+          <div class="commentGetName" th:text="${comment?.commentName}"></div>
           <div class="commentGetContent" th:text="${comment?.commentContent}"></div>
           <div class="commentfuncion">
             <button class="btn replyPostEdit">답글</button>

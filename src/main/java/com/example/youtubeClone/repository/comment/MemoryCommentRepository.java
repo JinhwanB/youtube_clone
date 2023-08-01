@@ -10,8 +10,8 @@ import java.util.Map;
 
 @Repository
 public class MemoryCommentRepository implements CommentRepository {
-    private static long sequence = 0L;
-    private static Map<Long, Comment> commentData = new HashMap<>();
+    private static long sequence = 0L; // 고유 id
+    private static Map<Long, Comment> commentData = new HashMap<>(); // 데이터베이스
 
     @Override
     public void save(Comment comment, String videoId) { // 댓글 저장
